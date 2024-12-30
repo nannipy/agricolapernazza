@@ -4,9 +4,8 @@ import ProductForm from '../components/ProductForm';
 
 // Mock database
 let mockDB = [
-  { id: 1, nome: "Il nostro Olio EVO - 1l", prezzo: 12.00, descrizione: "il nostro Olio umbro", img: "images/olio.jpg" },
-  { id: 2, nome: "Il nostro Olio Evo - 5l", prezzo: 60.00, descrizione: "il nostro Olio umbro", img: "images/olio2.jpg" },
-  { id: 3, nome: "Il nostro Olio EVO - 10l", prezzo: 120.00, descrizione: "il nostro Olio umbro", img: "images/olio3.jpg" },
+  { id: 1, nome: "Il nostro Olio EVO - 1l", prezzo: 13.00, descrizione: "il nostro Olio umbro", img: "images/olio_p2.jpg" },
+  { id: 2, nome: "Il nostro Olio Evo - 5l", prezzo: 65.00, descrizione: "il nostro Olio umbro", img: "images/olio_g1.jpg" },
 ];
 
 function Olio({ addToCart }) {
@@ -51,7 +50,7 @@ function Olio({ addToCart }) {
           </div>
           <div className="order-1 md:order-2 h-96 ">
             <img 
-              src="/images/olio-hero.jpg" 
+              src="/images/olio_hero.jpg" 
               alt="Produzione olio d'oliva ad Amelia" 
               className="rounded-2xl shadow-md w-auto h-full object-cover mx-auto"
             />

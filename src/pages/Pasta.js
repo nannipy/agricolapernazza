@@ -6,8 +6,8 @@ import ProductForm from '../components/ProductForm';
 
 // Mock database
 let mockDB = [
-  { id: 5, nome: "Fusilloni con grano antico Timilia Pernazza - 500g", prezzo: 3.00, descrizione: "I nostri fusilloni sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/2.png" },
-  { id: 4, nome: "Tagliatelle con grano antico Timilia Pernazza - 350g", prezzo: 3.00, descrizione: "Le nostre tagliatelle sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/1.png" },
+  { id: 5, nome: "Fusilloni con grano antico Timilia Pernazza - 500g", prezzo: 3.00, descrizione: "I nostri fusilloni sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/fusilloni.jpg" },
+  { id: 4, nome: "Tagliatelle con grano antico Timilia Pernazza - 350g", prezzo: 3.00, descrizione: "Le nostre tagliatelle sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/tagliatelle.jpg" },
 
 ];
 
@@ -49,7 +49,7 @@ function Prodotti({ addToCart }) {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            <img src="/images/fusilloni.jpg" alt="Pasta artigianale di grano Timilia" className="rounded-lg shadow-lg w-full" />
+            <img src="/images/pasta_2.jpg" alt="Pasta artigianale di grano Timilia" className="rounded-lg shadow-lg w-full" />
           </div>
         </div>
       </div>

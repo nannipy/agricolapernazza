@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 const products = [
-    { src: 'images/olio.jpg', alt: 'Il Nostro Olio EVO', Link: '/olio' },
-    { src: 'images/fusilloni.jpg', alt: 'La Nostra Pasta', Link: '/pasta' },
+    { src: 'images/olio_hero.jpg', alt: 'Il Nostro Olio EVO', Link: '/olio' },
+    { src: 'images/pasta_2_def.jpg', alt: 'La Nostra Pasta', Link: '/pasta' },
     { src: 'images/farina.jpg', alt: 'La Nostra Farina', Link: '/farina' },
   ];
 
