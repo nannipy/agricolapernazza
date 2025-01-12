@@ -6,8 +6,8 @@ import ProductForm from '../components/ProductForm';
 
 // Mock database
 let mockDB = [
-  { id: 5, nome: "Fusilloni con grano antico Timilia Pernazza - 500g", prezzo: 3.00, descrizione: "I nostri fusilloni sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/pasta/fusilloni.jpg" },
-  { id: 4, nome: "Tagliatelle con grano antico Timilia Pernazza - 350g", prezzo: 3.00, descrizione: "Le nostre tagliatelle sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/pasta/tagliatelle.jpg" },
+  { id: 4, nome: "Fusilloni con grano antico Timilia Pernazza - 500g", prezzo: 3.00, descrizione: "I nostri fusilloni sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/pasta/fusilloni.jpg" },
+  { id: 3, nome: "Tagliatelle con grano antico Timilia Pernazza - 350g", prezzo: 3.00, descrizione: "Le nostre tagliatelle sono fatti con farina di grano antico Timilia che dà un sapore unico e delicato.", img: "images/pasta/tagliatelle.jpg" },
 
 ];
 

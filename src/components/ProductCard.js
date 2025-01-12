@@ -31,7 +31,6 @@ function ProductCard({ prodotto, onDelete, onAddToCart }) {
         >
           Maggiori Dettagli
         </Link>
-        <div className="mt-0">
           <AnimatePresence>
             <motion.button 
               onClick={handleAddToCart}
@@ -43,7 +42,6 @@ function ProductCard({ prodotto, onDelete, onAddToCart }) {
               {isAnimating ? "Aggiunto!" : "Aggiungi al Carrello"}
             </motion.button>
           </AnimatePresence>
-        </div>
     </div>
     </motion.div>
   );

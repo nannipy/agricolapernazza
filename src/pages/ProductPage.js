@@ -148,12 +148,12 @@ const detailedProductsDB = [
       {
         titolo: "Impasto",
         descrizione: "Lavorazione dell'impasto con sola acqua e farina, senza additivi",
-        immagine: "/images/pasta_processo2.jpg"
+        immagine: "/images/pasta/impasto.jpg"
       },
       {
         titolo: "Essiccazione",
         descrizione: "Processo lento a bassa temperatura per 24-36 ore",
-        immagine: "/images/pasta_processo3.jpg"
+        immagine: "/images/pasta/essiccazione.jpg"
       }
     ]
   },
@@ -198,12 +198,12 @@ const detailedProductsDB = [
       {
         titolo: "Impasto",
         descrizione: "Lavorazione dell'impasto con sola acqua e farina, senza additivi",
-        immagine: "images/pasta_processo2.jpg"
+        immagine: "/images/pasta/impasto.jpg"
       },
       {
         titolo: "Essiccazione",
         descrizione: "Processo lento a bassa temperatura per 24-36 ore",
-        immagine: "images/pasta_processo3.jpg"
+        immagine: "/images/pasta/essiccazione.jpg"
       }
     ]
   },
@@ -228,10 +228,8 @@ const detailedProductsDB = [
       fibre: "3g"
     },
     immagini: [
-      "images/farina.jpg",
-      "images/grano_processo1.jpg",
-      "images/macinatura.jpg",
-      "images/farina_confezionamento.jpg"
+      "/images/farina/farina.jpg",
+
     ],
     certificazioni: [
       { nome: "Biologico", icon: "Leaf", descrizione: "Coltivazione secondo standard biologici" },
@@ -243,17 +241,17 @@ const detailedProductsDB = [
       {
         titolo: "Selezione",
         descrizione: "Accurata selezione dei migliori chicchi di grano Timilia",
-        immagine: "images/grano_processo1.jpg"
+        immagine: "/images/farina/selezione.jpg"
       },
       {
         titolo: "Macinatura",
         descrizione: "Macinatura lenta a pietra per preservare le proprietà nutritive",
-        immagine: "images/macinatura.jpg"
+        immagine: "/images/farina/macinatura.jpg"
       },
       {
         titolo: "Confezionamento",
         descrizione: "Confezionamento in ambiente controllato per garantire la massima freschezza",
-        immagine: "images/farina_confezionamento.jpg"
+        immagine: "/images/farina/confezionamento.jpg"
       }
     ]
   },
@@ -278,10 +276,8 @@ const detailedProductsDB = [
       fibre: "3g"
     },
     immagini: [
-      "images/farina_grande.jpg",
-      "images/grano_processo1.jpg",
-      "images/macinatura.jpg",
-      "images/farina_confezionamento.jpg"
+      "/images/farina/farina.jpg",
+      
     ],
     certificazioni: [
       { nome: "Biologico", icon: "Leaf", descrizione: "Coltivazione secondo standard biologici" },
@@ -293,17 +289,64 @@ const detailedProductsDB = [
       {
         titolo: "Selezione",
         descrizione: "Accurata selezione dei migliori chicchi di grano Timilia",
-        immagine: "images/grano_processo1.jpg"
+        immagine: "/images/farina/selezione.jpg"
       },
       {
         titolo: "Macinatura",
         descrizione: "Macinatura lenta a pietra per preservare le proprietà nutritive",
-        immagine: "images/macinatura.jpg"
+        immagine: "/images/farina/macinatura.jpg"
       },
       {
         titolo: "Confezionamento",
         descrizione: "Confezionamento in ambiente controllato per garantire la massima freschezza",
-        immagine: "images/farina_confezionamento.jpg"
+        immagine: "/images/farina/confezionamento.jpg"
+      }
+    ]
+  },
+  {
+    id: 7,
+    nome: "La nostra crusca di Grano Duro antico Timilia - 1kg",
+    prezzo: 3.00,
+    descrizione: "Farina di grano duro Timilia macinata a pietra - Formato famiglia",
+    categoria: "farina",
+    dettagliProduzione: "La nostra farina è ottenuta dalla macinatura a pietra del pregiato grano duro Timilia, un'antica varietà siciliana coltivata con metodi biologici nel nostro podere. Il processo di macinatura lenta a pietra mantiene intatte le proprietà nutrizionali e organolettiche del cereale.",
+    caratteristiche: {
+      colore: "Ambrato chiaro con riflessi dorati",
+      consistenza: "Fine ma non raffinata",
+      proteine: "13-14%",
+      conservazione: "6 mesi in luogo fresco e asciutto"
+    },
+    valoriNutrizionali: {
+      porzione: "100g",
+      valoreEnergetico: "340 kcal",
+      carboidrati: "70g",
+      proteine: "13g",
+      fibre: "3g"
+    },
+    immagini: [
+      "/images/farina/crusca.jpg",
+    ],
+    certificazioni: [
+      { nome: "Biologico", icon: "Leaf", descrizione: "Coltivazione secondo standard biologici" },
+      { nome: "Grani Antichi", icon: "Award", descrizione: "100% Grano antico Timilia" },
+      { nome: "Macinatura a Pietra", icon: "ThermometerSun", descrizione: "Lavorazione tradizionale" }
+    ],
+    consiglieUso: "Perfetta per la preparazione di pasta fresca, pane e prodotti da forno. Ideale anche per pizze e focacce.",
+    processoLavorazione: [
+      {
+        titolo: "Selezione",
+        descrizione: "Accurata selezione dei migliori chicchi di grano Timilia",
+        immagine: "/images/farina/selezione.jpg"
+      },
+      {
+        titolo: "Macinatura",
+        descrizione: "Macinatura lenta a pietra per preservare le proprietà nutritive",
+        immagine: "/images/farina/macinatura.jpg"
+      },
+      {
+        titolo: "Confezionamento",
+        descrizione: "Confezionamento in ambiente controllato per garantire la massima freschezza",
+        immagine: "/images/farina/confezionamento.jpg"
       }
     ]
   }
@@ -380,7 +423,7 @@ function ProductPage({ addToCart }) {
                 key={currentImageIndex}
                 src={currentProduct.immagini[currentImageIndex]}
                 alt={currentProduct.nome}
-                className="ml-14 h-full object-cover rounded-lg cursor-pointer"
+                className="w-full h-full object-cover rounded-lg cursor-pointer"
                 onClick={() => setShowGallery(true)}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

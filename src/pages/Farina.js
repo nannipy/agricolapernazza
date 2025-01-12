@@ -4,9 +4,9 @@ import ProductForm from '../components/ProductForm';
 
 // Mock database
 let mockDB = [
-  { id: 7, nome: "La nostra farina di Grano Duro antico Timilia - 1kg", prezzo: 3.00, descrizione: "il nostro Olio umbro", img: "images/farina/farina.jpg" },
-  { id: 8, nome: "La nostra crusca di Grano Duro antico Timilia - 2kg", prezzo: 6.00, descrizione: "il nostro Olio umbro", img: "images/farina/farina.jpg" },
-  { id: 9, nome: "La nostra crusca - 1kg ", prezzo: 1.50, descrizione: "il nostro Olio umbro", img: "images/farina/crusca.jpg" },
+  { id: 5, nome: "La nostra farina di Grano Duro antico Timilia - 1kg", prezzo: 3.00, descrizione: "il nostro Olio umbro", img: "images/farina/farina.jpg" },
+  { id: 6, nome: "La nostra crusca di Grano Duro antico Timilia - 2kg", prezzo: 6.00, descrizione: "il nostro Olio umbro", img: "images/farina/farina.jpg" },
+  { id: 7, nome: "La nostra crusca - 1kg ", prezzo: 1.50, descrizione: "il nostro Olio umbro", img: "images/farina/crusca.jpg" },
 
 ];
 
