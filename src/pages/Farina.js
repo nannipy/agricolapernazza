@@ -4,9 +4,10 @@ import ProductForm from '../components/ProductForm';
 
 // Mock database
 let mockDB = [
-  { id: 7, nome: "La nostra farina di Grano Duro antico Timilia - 1kg", prezzo: 3.00, descrizione: "il nostro Olio umbro", img: "images/farina.jpg" },
-  { id: 8, nome: "La nostra crusca di Grano Duro antico Timilia - 2kg", prezzo: 6.00, descrizione: "il nostro Olio umbro", img: "images/farina.jpg" },
-  { id: 9, nome: "La nostra crusca - 1kg ", prezzo: 1.50, descrizione: "il nostro Olio umbro", img: "images/crusca.jpg" },
+  { id: 7, nome: "La nostra farina di Grano Duro antico Timilia - 1kg", prezzo: 3.00, descrizione: "il nostro Olio umbro", img: "images/farina/farina.jpg" },
+  { id: 8, nome: "La nostra crusca di Grano Duro antico Timilia - 2kg", prezzo: 6.00, descrizione: "il nostro Olio umbro", img: "images/farina/farina.jpg" },
+  { id: 9, nome: "La nostra crusca - 1kg ", prezzo: 1.50, descrizione: "il nostro Olio umbro", img: "images/farina/crusca.jpg" },
+
 ];
 
 function Farina({ addToCart }) {
@@ -54,7 +55,7 @@ function Farina({ addToCart }) {
       </div>
       
       {showForm && <ProductForm onSubmit={aggiungiProdotto} onCancel={() => setShowForm(false)} />}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mb-8 gap-20">
         {prodotti.map(prodotto => (
           <ProductCard 
             key={prodotto.id} 

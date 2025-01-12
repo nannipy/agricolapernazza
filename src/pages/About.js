@@ -91,7 +91,7 @@ function About() {
           <h2 className="text-3xl font-bold mb-4">Scopri i Nostri Prodotti</h2>
           <p className="text-lg mb-6">Assapora la tradizione e la qualità dei prodotti della Famiglia Pernazza.</p>
           <Link
-            to="/prodotti"
+            to="/products"
             className="bg-green text-white font-bold py-3 px-6 rounded-lg hover:bg-beige hover:text-feldgrau transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

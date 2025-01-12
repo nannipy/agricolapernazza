@@ -28,7 +28,7 @@ function Navbar({ cart = [], toggleCart }) {
     <nav className="text-parchment p-4 ">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-4xl ml-0 font-bold hover:text-green transition-colors flex items-center">
-          <a href='/' className="text-green hover:text-green transition-colors"> Agricola Pernazza</a>
+          <img src="/images/logo.png" alt="Logo" className=" h-36 mr-2" />
         </Link>
         <div className="md:hidden">
           <button onClick={toggleMobileMenu} className="text-parchment focus:outline-none">
@@ -76,7 +76,7 @@ function Navbar({ cart = [], toggleCart }) {
           <li><Link to="/contact" className="hover:text-white transition-colors">Contatti</Link></li>
           <li>
             <button onClick={toggleCart} className="relative text-beige transition-colors bg-green px-5 py-3 rounded-lg">
-              <img src="images/carrello.png" alt="Carrello" className="w-auto h-6 text-beige" />
+              <img src="/images/carrello.png" alt="Carrello" className="w-auto h-6 text-beige" />
               {cart.length > 0 && (
                 <span className="absolute top-1 right-1 bg-white text-green rounded-full text-xs w-4 h-4 flex items-center justify-center">
                   {cart.length}
