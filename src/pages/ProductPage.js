@@ -35,7 +35,7 @@ const detailedProductsDB = [
     ],
     certificazioni: [
       { nome: "Biologico", icon: "Leaf", descrizione: "Prodotto secondo standard biologici" },
-      { nome: "DOP Umbria", icon: "Award", descrizione: "Denominazione di Origine Protetta" },
+      { nome: "Olio Umbro", icon: "Award", descrizione: "Denominazione di Origine Protetta" },
       { nome: "Spremitura a Freddo", icon: "ThermometerSun", descrizione: "Lavorazione a temperatura controllata" }
     ],
     consiglieUso: "Ideale per condire insalate, bruschette e zuppe. Perfetto per la cottura a bassa temperatura.",
@@ -352,7 +352,6 @@ const detailedProductsDB = [
   }
 ];
 
-
 function ProductPage({ addToCart }) {
   const { id } = useParams();
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -366,7 +365,6 @@ function ProductPage({ addToCart }) {
     const product = detailedProductsDB.find(p => p.id === parseInt(id));
     setCurrentProduct(product);
   }, [id]);
-
 
   if (!currentProduct) {
     return (
@@ -384,7 +382,7 @@ function ProductPage({ addToCart }) {
 
   const handleAddToCart = () => {
     setIsAnimating(true);
-    addToCart({ ...currentProduct, quantity });
+    addToCart({ currentProduct, quantity });
     setTimeout(() => setIsAnimating(false), 500);
   };
 
@@ -401,26 +399,22 @@ function ProductPage({ addToCart }) {
   };
 
   const getIconComponent = (iconName) => {
-    const icons = {
-      Leaf,
-      Award,
-      ThermometerSun
-    };
+    const icons = { Leaf, Award, ThermometerSun };
     return icons[iconName] || Award;
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-4 md:py-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-2xl p-8 shadow-lg"
+        className="bg-white rounded-2xl p-4 md:p-8 shadow-lg"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* Gallery Section */}
           <div className="space-y-4">
-            <div className="relative h-96 group">
+            <div className="relative h-64 md:h-96 group">
               <motion.img
                 key={currentImageIndex}
                 src={currentProduct.immagini[currentImageIndex]}
@@ -433,24 +427,24 @@ function ProductPage({ addToCart }) {
               />
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               >
-                <ChevronLeft className="w-6 h-6 text-feldgrau" />
+                <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-feldgrau" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               >
-                <ChevronRight className="w-6 h-6 text-feldgrau" />
+                <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-feldgrau" />
               </button>
             </div>
-            <div className="flex gap-2 overflow-x-auto py-2 justify-center ">
+            <div className="flex gap-2 overflow-x-auto py-2 scrollbar-hide justify-start md:justify-center">
               {currentProduct.immagini.map((img, index) => (
                 <motion.button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  whileHover={{ scale: 1.10 }}
-                  className={`flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden transition-all duration-200 ${
+                  whileHover={{ scale: 1.05 }}
+                  className={`flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-lg overflow-hidden transition-all duration-200 ${
                     currentImageIndex === index ? 'ring-2 ring-feldgrau' : ''
                   }`}
                 >
@@ -461,11 +455,11 @@ function ProductPage({ addToCart }) {
           </div>
 
           {/* Product Info Section */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <motion.h1 
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-3xl font-bold text-feldgrau"
+              className="text-2xl md:text-3xl font-bold text-feldgrau"
             >
               {currentProduct.nome}
             </motion.h1>
@@ -475,7 +469,7 @@ function ProductPage({ addToCart }) {
               animate={{ opacity: 1 }}
               className="flex items-center justify-between"
             >
-              <p className="text-2xl font-semibold text-feldgrau">
+              <p className="text-xl md:text-2xl font-semibold text-feldgrau">
                 {(currentProduct.prezzo * quantity).toFixed(2)} €
               </p>
               <div className="flex items-center gap-4 bg-gray-100 rounded-lg p-2">
@@ -495,14 +489,14 @@ function ProductPage({ addToCart }) {
               </div>
             </motion.div>
 
-            {/* Tabs */}
-            <div className="border-b border-gray-200">
-              <div className="flex space-x-4">
+            {/* Tabs - Scrollable on mobile */}
+            <div className="border-b border-gray-200 overflow-x-auto">
+              <div className="flex space-x-4 min-w-max">
                 {['descrizione', 'caratteristiche', 'nutrizione'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`py-2 px-4 border-b-2 transition-colors ${
+                    className={`py-2 px-4 border-b-2 transition-colors whitespace-nowrap text-sm md:text-base ${
                       activeTab === tab
                         ? 'border-feldgrau text-feldgrau'
                         : 'border-transparent text-gray-500 hover:text-feldgrau'
@@ -521,11 +515,12 @@ function ProductPage({ addToCart }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
+                className="text-sm md:text-base"
               >
                 {activeTab === 'descrizione' && (
                   <div className="space-y-4">
                     <p className="text-gray-700">{currentProduct.dettagliProduzione}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
                       {currentProduct.certificazioni.map((cert, index) => {
                         const IconComponent = getIconComponent(cert.icon);
                         return (
@@ -534,11 +529,11 @@ function ProductPage({ addToCart }) {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-gray-50 p-4 rounded-lg text-center"
+                            className="bg-gray-50 p-3 md:p-4 rounded-lg text-center"
                           >
-                            <IconComponent className="w-6 h-6 mx-auto mb-2 text-green" />
-                            <h3 className="font-semibold text-feldgrau">{cert.nome}</h3>
-                            <p className="text-sm text-gray-600">{cert.descrizione}</p>
+                            <IconComponent className="w-5 h-5 md:w-6 md:h-6 mx-auto mb-2 text-green" />
+                            <h3 className="font-semibold text-feldgrau text-sm md:text-base">{cert.nome}</h3>
+                            <p className="text-xs md:text-sm text-gray-600">{cert.descrizione}</p>
                           </motion.div>
                         );
                       })}

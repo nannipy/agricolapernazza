@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -15,18 +15,29 @@ import Products from './pages/Products';
 import ProductPage from './pages/ProductPage';
 
 function App() {
-  const [cart, setCart] = useState([]); // Assicurati che cart sia inizializzato come array
+  // Inizializza il carrello dal localStorage
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Salva il carrello nel localStorage quando cambia
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === product.id);
       if (existingItem) {
         return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === product.id 
+            ? { ...item, quantity: item.quantity + (product.quantity || 1) }
+            : item
         );
       }
-      return [...prevCart, { ...product, quantity: 1 }];
+      return [...prevCart, { ...product, quantity: product.quantity || 1 }];
     });
   };
 
@@ -78,6 +89,7 @@ function App() {
         removeFromCart={removeFromCart}
         isOpen={isCartOpen}
         toggleCart={toggleCart}
+        className="hidden md:block"
       />
     </Router>
   );
