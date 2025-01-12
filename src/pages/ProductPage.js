@@ -352,6 +352,7 @@ const detailedProductsDB = [
   }
 ];
 
+
 function ProductPage({ addToCart }) {
   const { id } = useParams();
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -365,6 +366,7 @@ function ProductPage({ addToCart }) {
     const product = detailedProductsDB.find(p => p.id === parseInt(id));
     setCurrentProduct(product);
   }, [id]);
+
 
   if (!currentProduct) {
     return (
@@ -442,12 +444,12 @@ function ProductPage({ addToCart }) {
                 <ChevronRight className="w-6 h-6 text-feldgrau" />
               </button>
             </div>
-            <div className="flex gap-2 overflow-x-auto py-2">
+            <div className="flex gap-2 overflow-x-auto py-2 justify-center ">
               {currentProduct.immagini.map((img, index) => (
                 <motion.button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.10 }}
                   className={`flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden transition-all duration-200 ${
                     currentImageIndex === index ? 'ring-2 ring-feldgrau' : ''
                   }`}
@@ -659,7 +661,7 @@ function ProductPage({ addToCart }) {
                 key={currentImageIndex}
                 src={currentProduct.immagini[currentImageIndex]}
                 alt={currentProduct.nome}
-                className="max-h-[80vh] max-w-[80vw] object-contain"
+                className="max-h-[80vh] max-w-[80vw] object-contain mr-4 "
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
@@ -677,7 +679,7 @@ function ProductPage({ addToCart }) {
                 <ChevronRight className="w-6 h-6 text-feldgrau" />
               </button>
 
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
                 <div className="flex gap-2">
                   {currentProduct.immagini.map((_, index) => (
                     <button
@@ -686,7 +688,7 @@ function ProductPage({ addToCart }) {
                         e.stopPropagation();
                         setCurrentImageIndex(index);
                       }}
-                      className={`w-2 h-2 rounded-full ${
+                      className={`w-2 h-2 rounded-full  ${
                         currentImageIndex === index ? 'bg-white' : 'bg-gray-400'
                       }`}
                     />
@@ -723,7 +725,7 @@ function ProductPage({ addToCart }) {
                 <img
                   src={product.immagini[0]}
                   alt={product.nome}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-80 object-cover"
                 />
                 <div className="p-4">
                   <h3 className="font-semibold text-feldgrau mb-2">{product.nome}</h3>

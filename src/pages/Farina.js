@@ -55,7 +55,7 @@ function Farina({ addToCart }) {
       </div>
       
       {showForm && <ProductForm onSubmit={aggiungiProdotto} onCancel={() => setShowForm(false)} />}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mb-8 gap-20">
+      <div className="flex flex-wrap justify-center mb-8 gap-10">
         {prodotti.map(prodotto => (
           <ProductCard 
             key={prodotto.id} 

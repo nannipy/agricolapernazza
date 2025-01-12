@@ -60,7 +60,7 @@ function Olio({ addToCart }) {
 
       
       {showForm && <ProductForm onSubmit={aggiungiProdotto} onCancel={() => setShowForm(false)} />}
-      <div className="flex justify-center mb-8 gap-20">
+      <div className="flex flex-wrap justify-center mb-8 gap-20 ">
         {prodotti.map(prodotto => (
           <ProductCard 
             key={prodotto.id} 
