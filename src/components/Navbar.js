@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import {AlignJustify} from 'lucide-react';
 
 function Navbar({ cart = [], toggleCart }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -30,11 +31,9 @@ function Navbar({ cart = [], toggleCart }) {
         <Link to="/" className="text-4xl ml-0 font-bold hover:text-green transition-colors flex items-center">
           <img src="/images/logo.png" alt="Logo" className=" h-36 mr-2" />
         </Link>
-        <div className="md:hidden">
+        <div className="md:hidden p-4 pt-5 px-5 text-white bg-green rounded-3xl">
           <button onClick={toggleMobileMenu} className="text-parchment focus:outline-none">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
+            <AlignJustify className="w-6 h-6" />
           </button>
         </div>
         <ul className="hidden md:flex space-x-6 items-center">
