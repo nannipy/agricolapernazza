@@ -5,7 +5,7 @@ import PhotoGallery from '../components/PhotoGallery';
 function Home() {
   return (
     <main className="flex flex-col items-center p-5">
-      <div className="relative  md:w-[1300px] h-96 mb-12 mx-auto">
+      <div className="relative w-full max-w-[1300px] h-96 mb-12 mx-auto">
         <img 
           src="images/ulivitramonto2.jpg"
           alt="Tramonto" 

@@ -22,9 +22,9 @@ function Contact() {
   };
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-2">
+    <main className="max-w-6xl mx-auto">
 
-      <section className="relative  h-72 mb-12 ">
+      <section className="relative w-full h-72 mb-12 ">
         <img src="/images/tramonto3.jpeg" alt="Contattaci" className=" w-full h-full object-cover rounded-lg" />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
           <h1 className="text-5xl font-bold text-white">Contattaci</h1>
