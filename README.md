@@ -48,7 +48,7 @@ Before you begin, ensure you have the following installed:
 
 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/yourusername/agricolapernazza.git
+git clone https://github.com/nannipy/agricolapernazza.git
 cd agricolapernazza/webapp
  ```
 
