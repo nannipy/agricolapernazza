@@ -15,11 +15,9 @@
     <a href="https://agricolapernazza.vercel.app/"><strong>Visit Website »</strong></a>
     <br />
     <br />
-    <a href="#demo">View Demo</a>
+    <a href="https://github.com/nannipy/agricolapernazza/issues">Report Bug</a>
     ·
-    <a href="https://github.com/yourusername/agricolapernazza/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/yourusername/agricolapernazza/issues">Request Feature</a>
+    <a href="https://github.com/nannipy/agricolapernazza/issues">Request Feature</a>
   </p>
 </div>
 
