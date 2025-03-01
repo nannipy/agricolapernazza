@@ -12,7 +12,7 @@
   <p align="center">
     A modern e-commerce platform showcasing the finest agricultural products from the heart of Umbria, Italy 🌿
     <br />
-    <a href="https://agricolapernazza.it"><strong>Visit Website »</strong></a>
+    <a href="https://agricolapernazza.vercel.app/"><strong>Visit Website »</strong></a>
     <br />
     <br />
     <a href="#demo">View Demo</a>
